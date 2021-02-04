@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>错误页面</title>
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css"/>
+</head>
+<body>
+<div th:replace="_navigation::nav(ask='')"></div>
+<div class="jumbotron">
+    <h1>出错啦！！！</h1>
+    <p th:text="${message}">服务器去沙漠度假了，要不先回主页，等他回来</p>
+    <p><a class="btn btn-primary btn-lg" href="/" role="button">回到主页</a></p>
+</div>
+
+<div th:replace="footer::footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</body>
+</html>

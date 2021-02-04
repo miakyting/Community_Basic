@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.limingzhu.community.mapper.CommentExtMapper" >
+  <resultMap id="BaseResultMap" type="com.limingzhu.community.model.Comment" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="commentator" property="commentator" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="BIGINT" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="BIGINT" />
+    <result column="like_count" property="likeCount" jdbcType="BIGINT" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="comment_Count" property="commentCount" jdbcType="INTEGER" />
+  </resultMap>
+  <update id="incCommentCount" parameterType="com.limingzhu.community.model.Comment">
+    update COMMENT
+    set comment_count = comment_count + #{commentCount,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+</mapper>

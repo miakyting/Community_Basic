@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>视频集合</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css"/>
+
+</head>
+<body>
+
+<!--导航栏-->
+<div th:replace="_navigation::nav(ask='提问')"></div>
+
+<!--内容-->
+<div class="container-fluid main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>视频教程?不存在的</h1>
+            <p>其实我也想出，奈何本人太菜了，放几个B站鬼畜视频供大家乐呵乐呵吧，都是我的珍藏</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>某某开合集（手动滑稽）</h2>
+                <a th:href="@{/video/(type=1)}">
+                    <img src="/images/lu.PNG" style="width: 330px;margin-left: 10px;">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h2>改革春风吹满地</h2>
+                <a href="#">
+                    <img src="/images/zhao.PNG" style="width: 330px;margin-left: 10px;">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h2>新宝岛</h2>
+                <a href="#">
+                    <img src="/images/xinbaodao.PNG" style="width: 330px;margin-left: 10px;">
+                </a>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p>© 2016 Company, Inc.</p>
+        </footer>
+    </div>
+</div>
+
+<!--copyright-->
+<div th:replace="footer::footer"></div>
+
+<script src="/js/jquery-3.4.1.js" type="application/javascript"></script>
+<script src="/js/bootstrap.min.js" type="application/javascript"></script>
+<script src="/js/community.js" type="application/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+2021-02-05 00:28:23.130  INFO 21968 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on LAPTOP-2N3VQBBB with PID 21968 (started by 李明烛 in C:\Users\李明烛\IdeaProjects\community)
+2021-02-05 00:28:23.136  INFO 21968 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2021-02-05 00:28:23.201  INFO 21968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-05 00:28:23.201  INFO 21968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-05 00:28:24.400  INFO 21968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-05 00:28:24.409  INFO 21968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-05 00:28:24.409  INFO 21968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2021-02-05 00:28:24.502  INFO 21968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-05 00:28:24.502  INFO 21968 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1301 ms
+2021-02-05 00:28:25.075  INFO 21968 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-05 00:28:25.131  INFO 21968 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-02-05 00:28:25.221  INFO 21968 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-05 00:28:25.655  INFO 21968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-05 00:28:25.673  INFO 21968 --- [scheduling-1] c.l.community.schedule.HotTagTasks       : the time is now 2021-02-05
+2021-02-05 00:28:25.696  INFO 21968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-05 00:28:25.699  INFO 21968 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 3.239 seconds (JVM running for 5.369)
+2021-02-05 00:28:25.708  INFO 21968 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-05 00:28:26.618  INFO 21968 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-05 00:28:26.658  INFO 21968 --- [scheduling-1] c.l.community.schedule.HotTagTasks       : hostTagSchedule stop Fri Feb 05 00:28:26 CST 2021
+2021-02-05 00:28:41.162  INFO 21968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-05 00:28:41.163  INFO 21968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-05 00:28:41.172  INFO 21968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-02-05 00:28:46.184  WARN 21968 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 7
+### The error may exist in file [C:\Users\李明烛\IdeaProjects\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.limingzhu.community.mapper.QuestionExtMapper.selectBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select * from question                                    limit ?,?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 7
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 7]

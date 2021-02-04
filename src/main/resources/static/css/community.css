@@ -1,0 +1,129 @@
+.main{
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+}
+body{
+    background-color: #cfe5eb;
+}
+
+.btn-publish{
+    float: right;
+    margin-bottom: 15px;
+}
+.text-desc{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.community-menu{
+    display: block;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 13px;
+}
+
+.community-margin-top{
+    margin-top: 15px;
+}
+
+.jumbotron{
+    margin: 50px;
+}
+
+.media-body{
+    padding-top: 10px;
+}
+
+.comment{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-btn{
+    float: right;
+    margin-bottom: 10px;
+}
+
+.comment-sp{
+    margin-top: 0;
+}
+
+.icon{
+    color: #999;
+}
+
+.menu .icon{
+    margin-right: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu .active{
+    color: #499ef3;
+}
+
+.comments{
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee
+}
+
+.menu .icon:hover{
+    color: #499ef3;
+}
+
+.sub-comments{
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+.menu .comment-icon{
+    font-size:15px;
+    cursor: pointer;
+}
+
+.menu .comment-icon :hover{
+    color: #499ef3;
+}
+
+.question-tag{
+    margin-right: 5px;
+}
+
+.publish-tag{
+    margin-right:10px !important;
+}
+
+.publish-tag-tab{
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.question-related{
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.publish-tag-tab .label-info{
+    white-space: normal;
+    margin: 5px 5px;
+    display: inline-block;
+}
+
+.img-width{
+    width: 38px;
+}
+
+.copyright{
+    color: #666;
+    padding: 10px 30%;
+}

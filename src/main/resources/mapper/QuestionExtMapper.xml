@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.limingzhu.community.mapper.QuestionExtMapper">
+  <resultMap id="BaseResultMap" type="com.limingzhu.community.model.Question">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="BIGINT" property="gmtModified" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="view_count" jdbcType="INTEGER" property="viewCount" />
+    <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
+    <result column="like_count" jdbcType="INTEGER" property="likeCount" />
+  </resultMap>
+  <update id="incViewCount" parameterType="com.limingzhu.community.model.Question">
+    update question
+    set view_count = view_count + #{viewCount,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+  <update id="incCommentCount" parameterType="com.limingzhu.community.model.Question">
+    update question
+    set comment_count = comment_count + #{commentCount,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+
+  <select id="selectRelated" parameterType="com.limingzhu.community.model.Question" resultMap="BaseResultMap">
+    select * from  question where id != #{id} and tag regexp #{tag} order by rand() limit 10
+  </select>
+
+  <select id="countBySearch" parameterType="com.limingzhu.community.dto.QuestionQueryDTO" resultType="java.lang.Integer">
+    select count(*) from QUESTION
+    <where>
+      <if test="search != null and search != ''">
+        and title regexp #{search}
+      </if>
+      <if test="tag != null and tag != ''">
+        and tag regexp #{tag}
+      </if>
+      <if test="sort != null and sort != '' and sort == 'no'">
+        and comment_count =0
+      </if>
+      <if test="time != null and time != ''">
+        and gmt_create > #{time}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectBySearch" parameterType="com.limingzhu.community.dto.QuestionQueryDTO" resultMap="BaseResultMap">
+    select * from question
+    <where>
+      <if test="search != null and search != ''">
+        and title regexp #{search}
+      </if>
+      <if test="tag != null and tag != ''">
+        and tag regexp #{tag}
+      </if>
+      <if test="sort != null and sort != '' and sort == 'no'">
+        and comment_count =0
+      </if>
+      <if test="time != null and time != ''">
+        and gmt_create > #{time}
+      </if>
+    </where>
+    <if test="sort == null and sort == ''">
+      order by gmt_create desc
+    </if>
+    <if test="sort != null and sort != '' and sort == 'new'">
+      order by gmt_create desc
+    </if>
+    <if test="sort != null and sort != '' and sort == 'no'">
+      order by gmt_create desc
+    </if>
+    <if test="sort != null and sort != '' and(sort == 'hot' || sort == 'hot7' || sort == 'hot30')">
+      order by comment_count desc
+    </if>
+    limit #{page},#{size}
+  </select>
+
+  <select id="selectByTag" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from QUESTION where tag regexp #{tag}
+  </select>
+</mapper>

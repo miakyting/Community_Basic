@@ -1,0 +1,40 @@
+#MySql数据库配置
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/community?serverTimezone=UTC&userUnicode=True&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#githubApps
+github:
+  client:
+    id: Iv1.c6500d25b4dcb836
+    secret: e8bee80f3d73507344b5308e5a3513334f8bxxxx
+    redirect: http://localhost:8080/callback
+#MyBatis配置
+Mybatis:
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.limingzhu.community.mapper
+  mapper-locations: classpath:mapper/*.xml
+#AliyunOss对象存储配置信息
+Aliyun:
+  AFile:
+    AccessKeyId: LTAI4FoUoxrv9J5bpCBKFDV9
+    AccessKeySecret: hXocpgzXoWFpW38nEBElBG4Blxxxx
+    endpoint: http://oss-cn-hangzhou.aliyuncs.com
+    bucketName: community-images-bucket
+#log日志配置信息
+logging:
+  file:
+    path: logs/community.log
+    max-size: 200MB
+    max-history: 30
+  level:
+    root: info
+#    com.limingzhu.community.mapper: info
+#Springboot相关配置
+server:
+  error:
+    include-exception: true
